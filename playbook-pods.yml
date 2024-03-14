@@ -1,0 +1,12 @@
+---
+- name: Scale Deployment
+  hosts: console-openshift-console.itzroks-310001fqd2-sz5ulp-e9af4724cbeb0cbcaabe4c6c7f17d8f1-0000.us-south.containers.appdomain.cloud
+  tasks:
+    - name: Scale Deployment to 1 replicas
+      openshift.k8s:
+        state: present
+        definition:
+          kind: Deployment
+          name: httpd-sample
+          namespace: test
+          replicas: 1
