@@ -1,5 +1,6 @@
 ---
 - name: Remove Nginx
+  hosts: all
   tasks:
     - name: Stop Nginx service
       service:
