@@ -1,6 +1,6 @@
 ---
 - name: Example playbook to manage Kubernetes resources
-  hosts: localhost
+  hosts: all 
   gather_facts: no
   environment:
     ANSIBLE_COLLECTIONS_PATHS: /Users/claudiocasillo/.ansible/collections
