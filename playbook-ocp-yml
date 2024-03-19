@@ -1,0 +1,17 @@
+---
+- name: Example playbook to manage Kubernetes resources
+  hosts: localhost
+  gather_facts: no
+  environment:
+    ANSIBLE_COLLECTIONS_PATHS: /Users/claudiocasillo/.ansible/collections
+
+  tasks:
+    - name: Create a Kubernetes Namespace
+      kubernetes.core.k8s:
+        state: absent 
+        definition:
+          apiVersion: v1
+          kind: Namespace
+          metadata:
+            name: mynamespace
+
