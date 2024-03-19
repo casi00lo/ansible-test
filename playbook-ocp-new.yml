@@ -1,0 +1,15 @@
+---
+- name: Example playbook to manage Kubernetes resources
+  hosts: all 
+  gather_facts: no
+
+  tasks:
+    - name: Create a Kubernetes Namespace
+      kubernetes.core.k8s:
+        state: absent 
+        definition:
+          apiVersion: v1
+          kind: Namespace
+          metadata:
+            name: mynamespace
+
