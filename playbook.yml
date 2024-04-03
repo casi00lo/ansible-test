@@ -7,9 +7,11 @@
         name: nginx
         state: stopped
         enabled: no
+        become: true
 
     - name: Remove Nginx package
       package:
         name: nginx
         state: absent
+        become: true
 
